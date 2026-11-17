@@ -25,7 +25,7 @@
 
 ## Verification
 
-All **28 PHP files** in the sanitized publication passed PHP 8.5.2 syntax checks on the MacBook.
+All **29 PHP files** in the sanitized publication passed PHP 8.5.2 syntax checks on the MacBook.
 
 The checks do **not** establish full browser workflow testing, live payment settlement, fleet integrity under simultaneous bookings or secure commercial deployment.
 

@@ -53,7 +53,7 @@ php -S 127.0.0.1:8081
 find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
 ~~~
 
-**28 PHP files** passed syntax checking with PHP 8.5.2. A complete database-backed browser test, payment reconciliation and fleet acceptance test have not been established.
+**29 PHP files** passed syntax checking with PHP 8.5.2. A complete database-backed browser test, payment reconciliation and fleet acceptance test have not been established.
 
 ## Explore the project
 
