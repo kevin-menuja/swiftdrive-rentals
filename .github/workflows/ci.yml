@@ -1,0 +1,26 @@
+name: PHP source validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  php-lint:
+    name: PHP 8.3 syntax check
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql
+          coverage: none
+      - name: Syntax-check all source PHP files
+        run: |
+          set -euo pipefail
+          find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l

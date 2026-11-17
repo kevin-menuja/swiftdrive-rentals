@@ -1,0 +1,28 @@
+# Local credentials and machine-specific configuration
+config/config.local.php
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+
+# Runtime state
+uploads/
+assets/uploads/
+logs/
+cache/
+tmp/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+
+# IDE and dependencies
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+vendor/
+node_modules/

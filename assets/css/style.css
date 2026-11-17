@@ -1,0 +1,408 @@
+/* ==========================================================================
+   SwiftDrive Rentals (Negombo, Sri Lanka) - Custom Automotive Brand Styles
+   Palette:
+     - Deep Navy Primary:  #0B192C
+     - Slate Navy Surface: #132742
+     - Restrained Orange:  #FF6B2C (Hover: #E55A1F)
+     - Crisp White / Gray: #FFFFFF / #F8FAFC / #E2E8F0
+   ========================================================================== */
+
+:root {
+    --sd-navy: #0B192C;
+    --sd-navy-light: #132742;
+    --sd-navy-muted: #1E3A5F;
+    --sd-orange: #FF6B2C;
+    --sd-orange-hover: #E05519;
+    --sd-orange-soft: #FFF1EB;
+    --sd-bg-soft: #F8FAFC;
+    --sd-border: #E2E8F0;
+    --sd-text: #0F172A;
+    --sd-text-muted: #475569;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--sd-text);
+    background-color: var(--sd-bg-soft);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Accessibility & Keyboard Focus */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 16px;
+    background: var(--sd-orange);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 9999;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+.skip-link:focus {
+    top: 12px;
+    color: #fff;
+    outline: 3px solid #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--sd-orange) !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 44, 0.25) !important;
+}
+
+/* Brand Navigation */
+.navbar-swiftdrive {
+    background-color: var(--sd-navy);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-swiftdrive .navbar-brand {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    font-size: 1.35rem;
+}
+
+.navbar-swiftdrive .brand-accent {
+    color: var(--sd-orange);
+}
+
+.navbar-swiftdrive .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 6px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.navbar-swiftdrive .nav-link:hover,
+.navbar-swiftdrive .nav-link.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-swiftdrive .nav-link.active {
+    border-bottom: 2px solid var(--sd-orange);
+}
+
+/* Buttons */
+.btn-accent {
+    background-color: var(--sd-orange);
+    border-color: var(--sd-orange);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: var(--sd-orange-hover);
+    border-color: var(--sd-orange-hover);
+    color: #ffffff;
+}
+
+.btn-navy {
+    background-color: var(--sd-navy);
+    border-color: var(--sd-navy);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-navy:hover,
+.btn-navy:focus {
+    background-color: var(--sd-navy-light);
+    border-color: var(--sd-navy-light);
+    color: #ffffff;
+}
+
+.btn-outline-navy {
+    color: var(--sd-navy);
+    border-color: var(--sd-navy);
+    font-weight: 600;
+}
+
+.btn-outline-navy:hover {
+    background-color: var(--sd-navy);
+    color: #ffffff;
+}
+
+/* Hero Banner */
+.hero-section {
+    background: linear-gradient(135deg, #0B192C 0%, #132742 60%, #1E3A5F 100%);
+    color: #ffffff;
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: rgba(255, 107, 44, 0.16);
+    border: 1px solid rgba(255, 107, 44, 0.45);
+    color: #ffb088;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50rem;
+    max-width: 100%;
+}
+
+.search-panel {
+    background: #ffffff;
+    color: var(--sd-text);
+    border-radius: 14px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 40px rgba(11, 25, 44, 0.22);
+    border: 1px solid var(--sd-border);
+    max-width: 100%;
+}
+
+/* Rental Process Step Cards */
+.process-step-card {
+    background: #ffffff;
+    border: 1px solid var(--sd-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-step-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.process-step-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--sd-orange-soft);
+    color: var(--sd-orange);
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 107, 44, 0.35);
+}
+
+/* Password Toggle Input Group */
+.password-toggle-btn {
+    border-color: #dee2e6;
+    color: var(--sd-text-muted);
+    background-color: #f8fafc;
+}
+
+.password-toggle-btn:hover {
+    color: var(--sd-navy);
+    background-color: #e2e8f0;
+}
+
+/* Gallery Thumbnail Interactive State */
+.gallery-thumb-btn {
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.gallery-thumb-btn:hover,
+.gallery-thumb-btn.active {
+    opacity: 1;
+    border-color: var(--sd-orange) !important;
+    border-width: 2px !important;
+}
+
+/* Vehicle Cards */
+.vehicle-card {
+    background: #ffffff;
+    border: 1px solid var(--sd-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.09);
+}
+
+.vehicle-card-img-wrap {
+    position: relative;
+    background-color: var(--sd-navy);
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.vehicle-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vehicle-category-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(11, 25, 44, 0.88);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border-left: 3px solid var(--sd-orange);
+}
+
+.vehicle-spec-pill {
+    background-color: #F1F5F9;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.price-highlight {
+    color: var(--sd-navy);
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+/* Section Headers & KPI Cards */
+.page-header-band {
+    background: linear-gradient(120deg, #0B192C 0%, #16324F 100%);
+    color: #ffffff;
+    padding: 2.25rem 0;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid var(--sd-border);
+    border-left: 4px solid var(--sd-navy);
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.kpi-card.accent {
+    border-left-color: var(--sd-orange);
+}
+
+.text-orange {
+    color: var(--sd-orange) !important;
+}
+
+.bg-navy {
+    background-color: var(--sd-navy) !important;
+    color: #ffffff;
+}
+
+.bg-orange-soft {
+    background-color: var(--sd-orange-soft);
+    color: #9A3412;
+}
+
+/* Footer */
+.footer-swiftdrive {
+    background-color: var(--sd-navy);
+    color: rgba(255, 255, 255, 0.78);
+    padding: 3.5rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-swiftdrive a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.footer-swiftdrive a:hover {
+    color: var(--sd-orange);
+}
+
+/* Responsive Breakpoints (320px, 375px, 390px, 768px, 1024px) */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 2.75rem 0 2.5rem;
+    }
+    .page-header-band {
+        padding: 1.75rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .hero-section {
+        padding: 2rem 0 2rem;
+    }
+    .hero-section .display-5 {
+        font-size: 1.75rem;
+        line-height: 1.25;
+    }
+    .hero-section .lead {
+        font-size: 0.95rem;
+    }
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 10px;
+    }
+    .search-panel {
+        padding: 1.15rem;
+        border-radius: 12px;
+    }
+    .navbar-swiftdrive .navbar-brand {
+        font-size: 1.15rem;
+    }
+    .kpi-card {
+        padding: 1rem;
+    }
+    .price-highlight {
+        font-size: 1.1rem;
+    }
+}
+
+/* Print Styles for Booking Receipt */
+@media print {
+    .no-print,
+    .navbar-swiftdrive,
+    .footer-swiftdrive,
+    .btn {
+        display: none !important;
+    }
+    body {
+        background: #ffffff !important;
+    }
+    .receipt-box {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+}
+
